@@ -219,16 +219,15 @@ A persistent supervisor manages container creation, tracking, and termination. I
 
 ### IPC, Threads, and Synchronization
 
-Two IPC mechanisms:
+The bounded buffer is shared between producer and consumer threads, which introduces race conditions if accessed concurrently. Without synchronization, multiple threads could overwrite buffer data, leading to corruption or lost log entries.
 
-* Control: UNIX sockets (CLI ↔ supervisor)
-* Logging: Pipes (container → supervisor)
+Mutex locks are used to ensure mutual exclusion when accessing the buffer, preventing simultaneous modifications. Condition variables are used to block producer threads when the buffer is full and consumer threads when the buffer is empty, avoiding busy waiting.
 
-Synchronization:
-
-* Mutex for shared data
-* Condition variables for buffer control
-
+This design ensures:
+- No data loss (buffer is flushed before shutdown)
+- No corruption (only one thread accesses buffer at a time)
+- No deadlock (proper signaling between threads)
+  
 ---
 
 ### Memory Management and Enforcement
