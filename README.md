@@ -208,12 +208,14 @@ sudo rmmod monitor
 ### Isolation Mechanisms
 
 Containers use PID, UTS, and mount namespaces for isolation. `chroot()` ensures filesystem separation. However, all containers share the same kernel.
+All containers share the same host kernel, meaning system calls and kernel resources are common across containers.
 
 ---
 
 ### Supervisor and Process Lifecycle
 
 A persistent supervisor manages container creation, tracking, and termination. It ensures proper signal handling and avoids zombie processes.
+The supervisor acts as the parent process for all containers, allowing it to track child processes and handle SIGCHLD for proper cleanup.
 
 ---
 
@@ -233,6 +235,7 @@ This design ensures:
 ### Memory Management and Enforcement
 
 RSS represents actual physical memory usage. Soft limits generate warnings, while hard limits enforce termination. Kernel-level enforcement ensures accuracy and control.
+RSS does not include swapped-out memory or shared memory not currently resident in physical RAM.
 
 ---
 
