@@ -161,7 +161,8 @@ sudo rmmod monitor
 
 1. **Multi-container supervision**
    *Two containers running under one supervisor*
-   "D:\images\clean.png"
+   <img width="914" height="345" alt="multi" src="https://github.com/user-attachments/assets/ceee472c-53b3-4891-bfd5-0e1a76c680d5" />
+
 
 3. **Metadata tracking (`ps`)**
    *Displays container ID, PID, and state*
