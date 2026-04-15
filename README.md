@@ -159,30 +159,29 @@ sudo rmmod monitor
 
 ## 5. Demo (Screenshots)
 
-> Add screenshots below with captions
-
 1. **Multi-container supervision**
    *Two containers running under one supervisor*
+   "D:\images\clean.png"
 
-2. **Metadata tracking (`ps`)**
+3. **Metadata tracking (`ps`)**
    *Displays container ID, PID, and state*
 
-3. **Bounded-buffer logging**
+4. **Bounded-buffer logging**
    *Logs captured and stored in files*
 
-4. **CLI and IPC**
+5. **CLI and IPC**
    *Command sent from CLI and handled by supervisor*
 
-5. **Soft-limit warning**
+6. **Soft-limit warning**
    *Kernel logs showing memory warning*
 
-6. **Hard-limit enforcement**
+7. **Hard-limit enforcement**
    *Container killed after exceeding memory limit*
 
-7. **Scheduling experiment**
+8. **Scheduling experiment**
    *Comparison of execution times*
 
-8. **Clean teardown**
+9. **Clean teardown**
    *No zombie processes after shutdown*
 
 ---
