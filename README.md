@@ -163,27 +163,43 @@ sudo rmmod monitor
    *Two containers running under one supervisor*
    <img width="914" height="345" alt="multi" src="https://github.com/user-attachments/assets/ceee472c-53b3-4891-bfd5-0e1a76c680d5" />
 
-
-3. **Metadata tracking (`ps`)**
+2. **Metadata tracking (`ps`)**
    *Displays container ID, PID, and state*
+   <img width="914" height="345" alt="multi" src="https://github.com/user-attachments/assets/02484a5a-3b6c-47df-b74d-e09707cfe65c" />
 
-4. **Bounded-buffer logging**
+3. **Bounded-buffer logging**
    *Logs captured and stored in files*
+   <img width="911" height="324" alt="dmesg_tail" src="https://github.com/user-attachments/assets/c03b19ea-3a9e-48e8-9bdd-44ce776f764e" />
+
+ 
 
 5. **CLI and IPC**
    *Command sent from CLI and handled by supervisor*
+   <img width="911" height="146" alt="cli_ipc" src="https://github.com/user-attachments/assets/5521629a-9934-4fde-a8b6-e8782a36e82f" />
+   <img width="910" height="90" alt="engine_supervisor" src="https://github.com/user-attachments/assets/d3461099-448a-46e5-b0c7-608ad970acff" />
+
+
 
 6. **Soft-limit warning**
    *Kernel logs showing memory warning*
+   <img width="911" height="324" alt="dmesg_tail" src="https://github.com/user-attachments/assets/168e32a4-c61b-43e0-9ea0-b684a0f4c3d9" />
+
 
 7. **Hard-limit enforcement**
    *Container killed after exceeding memory limit*
+   <img width="909" height="698" alt="sudo_dmesg_tail_-n" src="https://github.com/user-attachments/assets/fd9ab12a-3e9b-4931-af16-b7fee69c1577" />
 
-8. **Scheduling experiment**
-   *Comparison of execution times*
 
-9. **Clean teardown**
+9. **Scheduling experiment**
+   *Two containers running concurrently under the supervisor, the Linux scheduler allocates CPU time differently, demonstrating fairness and scheduling behavior*
+   <img width="914" height="345" alt="multi" src="https://github.com/user-attachments/assets/80d5da1e-2ae6-4f1a-8816-daeef4c5e751" />
+
+
+10. **Clean teardown**
    *No zombie processes after shutdown*
+   <img width="916" height="306" alt="clean" src="https://github.com/user-attachments/assets/5ca16411-4683-4663-887c-5cdcbacd8e1f" />
+   <img width="910" height="352" alt="rmmod_monitor" src="https://github.com/user-attachments/assets/324b4047-ced5-4627-a28c-b3066fb572a6" />
+
 
 ---
 
